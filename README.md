@@ -12,7 +12,7 @@ Projects designed to practice working with parametric and non-parametric algorit
 This is a logistic regression program built from scratch. This was a great opportunity to brush up on my Calc III and Linear Algebra. It's heavily based on [this](https://beckernick.github.io/logistic-regression-from-scratch/) tutorial by [Nick Becker](https://github.com/beckernick).
 
 # Installation
-The programs in this repository rely on the `numpy` and `matplotlib` packages.
+To run these programs, you'll need the following packages: `numpy matplotlib PIL scipy skimage requests StringIO __future__`
 
 # License
 This sofware is published under the MIT license.
