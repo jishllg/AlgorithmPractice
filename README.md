@@ -3,7 +3,7 @@ Projects designed to practice working with parametric and non-parametric algorit
 ![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
 
 # Table of Contents
-* [logtistic_regression.py](#logtistic_regression.py)
+* [logtistic_regression.py](#logtistic_regressionpy)
 * [Installation](#Installation)
 * [License](#License)
 * [Questions](#Questions)
