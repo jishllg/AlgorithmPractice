@@ -1,4 +1,4 @@
-# PythonAlgorithmPractice
+# AlgorithmPractice
 Projects to practice working with parametric and non-parametric algorithms.
 ![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
 
