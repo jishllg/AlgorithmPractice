@@ -1,6 +1,5 @@
-# AlgorithmPractice
-Projects to practice working with parametric and non-parametric algorithms.
-![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
+# Algorithm Practice
+Projects to practice working with parametric and non-parametric algorithms. These are heavily based on tutorials by [Nick Becker](https://github.com/beckernick), but they're all written in Python 3 (as opposed to the originals programed in Python 2).
 
 # Table of Contents
 * [logtistic_regression.py](#logtistic_regressionpy)
@@ -10,16 +9,13 @@ Projects to practice working with parametric and non-parametric algorithms.
 * [Questions](#Questions)
 
 # logtistic_regression.py
-This is a logistic regression program built from scratch. This was a great opportunity to brush up on my Calc III and Linear Algebra. It's heavily based on [this](https://beckernick.github.io/logistic-regression-from-scratch/) tutorial by [Nick Becker](https://github.com/beckernick).
+This is a logistic regression program built from scratch. This was a great opportunity to brush up on my Calc III and Linear Algebra. I used [this](https://beckernick.github.io/logistic-regression-from-scratch/) tutorial.
 
 # convolution.py
 Work in progress. . .
 
 # Installation
-To run these programs, you'll need the following packages: `numpy matplotlib PIL scipy skimage requests StringIO __future__`
-
-# License
-This sofware is published under the MIT license.
+To run these programs, you'll need the following packages: `numpy matplotlib Pillow scipy scikit-image requests future`
 
 # Questions
 
