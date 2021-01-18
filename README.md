@@ -16,7 +16,7 @@ This is a logistic regression program built from scratch. This was a great oppor
 Work in progress. . .
 
 # Installation
-To run these programs, you'll need the following packages: `numpy matplotlib PIL scipy skimage requests StringIO __future__`
+To run these programs, you'll need the following packages: `numpy matplotlib Pillow scipy scikit-image requests future`
 
 # License
 This sofware is published under the MIT license.
