@@ -1,4 +1,4 @@
-# AlgorithmPractice
+# Algorithm Practice
 Projects to practice working with parametric and non-parametric algorithms. These are heavily based on tutorials by [Nick Becker](https://github.com/beckernick), but they're all written in Python 3 (as opposed to the originals programed in Python 2).
 
 # Table of Contents
