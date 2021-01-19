@@ -41,4 +41,10 @@ def conv_2d_kernel(kernel):
             output_array[i, j] = squash_value(np.sum(temp_array * kernel))
     return output_array
 
-show_img(conv_2d_kernel(np.array([[0, -1, 0], [-1, 4, -1], [0, -1, 0]])))
+# List of kernels
+edge_detect = np.array([[0, -1, 0], [-1, 4, -1], [0, -1, 0]])
+sharpen = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]])
+gaussian_blur = np.array([[1, 2, 1], [2, 4, 2], [1, 2, 1]]) / 16
+
+# show_img(conv_2d_kernel(gaussian_blur))
+print(str(img_arr.shape[0]), str(img_arr.shape[1]))
