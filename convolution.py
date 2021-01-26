@@ -7,6 +7,7 @@ from skimage.color import rgb2gray
 import matplotlib.pyplot as plt
 import requests
 from io import BytesIO
+import tensorflow as tf
 
 # Checking for saved image
 try:
@@ -46,5 +47,7 @@ edge_detect = np.array([[0, -1, 0], [-1, 4, -1], [0, -1, 0]])
 sharpen = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]])
 gaussian_blur = np.array([[1, 2, 1], [2, 4, 2], [1, 2, 1]]) / 16
 
-# show_img(conv_2d_kernel(gaussian_blur))
-print(str(img_arr.shape[0]), str(img_arr.shape[1]))
+show_img(conv_2d_kernel(gaussian_blur))
+
+img_arr_4d = img_arr.reshape(-1, img_arr.shape[0], img_arr.shape[1], 1)
+edge_detect_4d = edge_detect.reshape(3, 3, 1, 1)
