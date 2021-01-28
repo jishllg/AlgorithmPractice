@@ -9,13 +9,13 @@ Projects to practice working with parametric and non-parametric algorithms. Thes
 * [Questions](#Questions)
 
 # convolution.py
-This program uses matrix algebra to apply transformations to a given image, and gave me a chance to start using TensorFlow for convolution. I used [this](https://beckernick.github.io/convolutions/) tutorial.
+This program uses matrix algebra to apply transformations to a given image, while building some of the functionality of TensorFlow from scratch. I used [this](https://beckernick.github.io/convolutions/) tutorial.
 
 # logtistic_regression.py
 This is a logistic regression program built from scratch. This was a great opportunity to brush up on my Calc III and Linear Algebra. I used [this](https://beckernick.github.io/logistic-regression-from-scratch/) tutorial.
 
 # Installation
-To run these programs, you'll need the following packages in your Python 3.5–3.8 enviornment:<br>`numpy matplotlib Pillow scipy scikit-image requests future tensorflow`
+To run these programs, you'll need the following packages in your Python 3.5–3.8 enviornment:<br>`numpy matplotlib sklearn Pillow scipy scikit-image requests future tensorflow`
 
 # Questions
 If you have any questions regarding this sofware, contact me through 
