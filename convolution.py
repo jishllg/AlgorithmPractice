@@ -46,27 +46,18 @@ def conv_2d_kernel(kernel):
 edge_detect = np.array([[0, -1, 0], [-1, 4, -1], [0, -1, 0]])
 sharpen = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]])
 gaussian_blur = np.array([[1, 2, 1], [2, 4, 2], [1, 2, 1]]) / 16
-show_img(conv_2d_kernel(gaussian_blur)) # Uncomment to show kernel transformation
+# show_img(conv_2d_kernel(edge_detect)) # Uncomment to show kernel transformation
 
-# Will debug at a future date with greater knowledge of TF
+# Reshaping arrays to work with TF functions
+img_arr_4d = img_arr.reshape(-1, img_arr.shape[0], img_arr.shape[1], 1)
+kernel_4d = gaussian_blur.reshape(3, 3, 1, 1)
 
-# img_arr_4d = img_arr.reshape(-1, img_arr.shape[0], img_arr.shape[1], 1)
-# edge_detect_4d = edge_detect.reshape(3, 3, 1, 1)
+# Computing convolution
+tf_img = tf.Variable(np.array(img_arr_4d, dtype = np.float32))
+tf_edge_kernel = tf.Variable(np.array(kernel_4d, dtype = np.float32))
+transformed_img = tf.nn.conv2d(tf_img, tf_edge_kernel, strides = [1, 1, 1, 1], padding = "SAME")
+transformed_img = transformed_img[0, :, :, 0]
 
-# graph = tf.Graph()
-
-# tf.compat.v1.disable_eager_execution()
-
-# with graph.as_default():
-#     tf_img = tf.Variable(np.array(img_arr_4d, dtype = np.float32))
-#     tf_edge_kernel = tf.Variable(np.array(edge_detect_4d, dtype = np.float32))
-#     tf_convolution_output = tf.nn.conv2d(tf_img, tf_edge_kernel, strides = [1, 1, 1, 1], padding = "SAME")
-
-# with tf.compat.v1.Session(graph = graph) as sess:
-#     sess.run(tf.compat.v1.global_variables_initializer())
-#     transformed_img = tf_convolution_output.eval()
-#     transformed_img = transformed_img[0, :, :, 0]
-
-# np.testing.assert_array_almost_equal(conv_2d_kernel(edge_detect), transformed_img, decimal = 4)
-
-# show_img(transformed_img)
+# Testing if TF output is equal to test convolution
+show_img(transformed_img)
+np.testing.assert_array_almost_equal(conv_2d_kernel(gaussian_blur), transformed_img, decimal = 4)
