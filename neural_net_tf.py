@@ -32,6 +32,5 @@ plt.show()
 # Preparing data
 labels_onehot = np.zeros((simulated_labels.shape[0], 3)).astype(int)
 labels_onehot[np.arrange(len(simulated_labels)), simulated_labels.astype(int)] = 1
-train_dataset, test dataset, \
-train_labels, test_labels = train_test_split(
+train_dataset, test dataset, train_labels, test_labels = train_test_split(
     simulated_features, labels_onehot, test_size = 0.1, random_state = 12)
