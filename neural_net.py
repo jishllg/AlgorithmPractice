@@ -45,8 +45,6 @@ class Neural_Net(object):
 def sigmoid(scores):
     return 1 / (1 + np.exp(-scores))
 
-
-
-net = Neural_Net([5, 5, 5])
-
-print(net.weights)
+# Sigmoid link function derivative
+def sigmoid_prime(scores):
+    return sigmoid(scores) * (1 - sigmoid(scores))
