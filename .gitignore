@@ -1,3 +1,6 @@
+# Data loader
+mnist_loader.py
+
 # Saved Arrays
 *.csv
 
