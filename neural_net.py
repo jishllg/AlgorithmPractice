@@ -29,6 +29,7 @@ class Neural_Net(object):
                 print("Epoch %(epoch)s: %(correct)s / %(total)s." %
                         {'epoch': i, 'correct': self.evaluate(test_data), 'total': n_test})
 
+# Creates mini batches to iterate through for backpropagation
     def update_mini_batch(self, mini_batch, eta):
         del_biases = [np.zeros(bias.shape) for bias in self.biases]
         del_weights = [np.zeros(weight.shape) for weight in self.weights]
@@ -40,6 +41,33 @@ class Neural_Net(object):
                         for bias, del_bias in zip(self.biases, del_biases)]
         self.weights = [weight - (eta / len(mini_batch)) * del_weight
                         for weight, del_weight in zip(self.weights, del_weights)]
+
+# Backpropagation algorithm
+    def backprop(self, x, y):
+        del_biases = [np.zeros(bias.shape) for bias in self.biases]
+        del_weights = [np.zeros(bias.weight) for weight in self.weights]
+        activation = x
+        activations = [x]
+        zs = []
+        for bias, weight in zip(self.biases, self.weights):
+            z = np.dot(weight, activation) + bias
+            zs.append(z)
+            activation = sigmoid(z)
+            activations.append(activation)
+        delta = self.cost_derivative(activations[-1], y) * sigmoid_prime(zs[-1])
+        del_biases[-1] = delta
+        del_weights[-1] = np.dot(delta, activations[-2].transpose())
+        for i in range(2, self.num_layers):
+            z = zs[-i]
+            sp = sigmoid_prime(z)
+            delta = np.dot(self.weights[-i + 1].transpose(), delta) * sp
+            del_biases[-i] = delta
+            del_weights[-i] = np.dot(delta, activations[-i - 1].transpose())
+        return(del_biases, del_weights)
+
+# Calculate vector of partial derivatives for the output activations
+    def cost_derivative(self, output_activations, y):
+        return(output_activations - y)
 
 # Sigmoid link function
 def sigmoid(scores):
